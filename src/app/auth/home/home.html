@@ -1,0 +1,145 @@
+<app-header></app-header>
+
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="grid">
+      <div class="col-12 md:col-6 lg:col-7 hero-content">
+        <h1 class="hero-title mb-3">Welcome to PAN Connect</h1>
+        <p class="hero-subtitle mb-4">Enterprise solutions with Angular 21 + PrimeNG 21</p>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <p-chip label="Secure OTP" icon="pi pi-shield-check"></p-chip>
+          <p-chip label="Fast UI" icon="pi pi-speedometer"></p-chip>
+          <p-chip label="Scalable" icon="pi pi-server"></p-chip>
+        </div>
+        <p-button 
+          label="Get Started" 
+          icon="pi pi-arrow-right" 
+          size="large" 
+          class="hero-btn"
+          routerLink="/auth/login"
+        ></p-button>
+      </div>
+      <div class="col-12 md:col-6 lg:col-5 flex align-items-center">
+        <p-card class="hero-card">
+          <i class="pi pi-users hero-icon"></i>
+          <h3>Trusted by 1000+ Businesses</h3>
+        </p-card>
+      </div>
+    </div>
+  </section>
+
+  <p-divider></p-divider>
+
+  <!-- Features Section -->
+  <section class="features-section py-8">
+    <div class="container">
+      <div class="text-center mb-6">
+        <h2 class="section-title">Why Choose PAN Connect?</h2>
+        <p class="section-subtitle">Modern solutions for modern businesses</p>
+      </div>
+      <div class="grid">
+        <div class="col-12 md:col-4 mb-4">
+          <p-card class="feature-card h-full">
+            <i class="pi pi-shield-check feature-icon mb-3"></i>
+            <h3 class="feature-title">Secure Authentication</h3>
+            <p>OTP verification with enterprise-grade security</p>
+            <p-badge severity="info" value="DLT Compliant"></p-badge>
+          </p-card>
+        </div>
+        <div class="col-12 md:col-4 mb-4">
+          <p-card class="feature-card h-full">
+            <i class="pi pi-speedometer feature-icon mb-3"></i>
+            <h3 class="feature-title">Lightning Fast</h3>
+            <p>Angular 21 optimized builds with esbuild</p>
+            <p-badge severity="success" value="SSR Ready"></p-badge>
+          </p-card>
+        </div>
+        <div class="col-12 md:col-4 mb-4">
+          <p-card class="feature-card h-full">
+            <i class="pi pi-users feature-icon mb-3"></i>
+            <h3 class="feature-title">Scalable Dashboards</h3>
+            <p>Admin & User panels for all business sizes</p>
+            <p-badge severity="warn" value="Responsive"></p-badge>
+          </p-card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p-divider></p-divider>
+
+  <!-- Contact Section -->
+  <section class="contact-section py-8">
+    <div class="container">
+      <div class="grid">
+        <div class="col-12 lg:col-6 mb-6 lg:mb-0">
+          <h2 class="contact-title mb-4">Get In Touch</h2>
+          <div class="contact-info">
+            <div class="flex align-items-center mb-3">
+              <i class="pi pi-map-marker mr-3 text-primary"></i>
+              <span>Vite, Maharashtra, India</span>
+            </div>
+            <div class="flex align-items-center mb-3">
+              <i class="pi pi-envelope mr-3 text-primary"></i>
+              <span>contact@panconnect.in</span>
+            </div>
+            <div class="flex align-items-center">
+              <i class="pi pi-phone mr-3 text-primary"></i>
+              <span>+91 98765 43210</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 lg:col-6">
+          <p-card header="Send us a message" class="contact-card">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <div class="p-fluid">
+                <div class="p-field mb-4">
+                  <label for="name">Name</label>
+                  <input 
+                    id="name" 
+                    pInputText 
+                    formControlName="name" 
+                    class="w-full"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div class="p-field mb-4">
+                  <label for="email">Email</label>
+                  <input 
+                    id="email" 
+                    pInputText 
+                    type="email"
+                    formControlName="email" 
+                    class="w-full"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div class="p-field mb-4">
+                  <label for="message">Message</label>
+                  <textarea 
+                    id="message"
+                    pInputTextarea 
+                    formControlName="message" 
+                    rows="5"
+                    placeholder="Tell us about your project"
+                    class="w-full"
+                  ></textarea>
+                </div>
+                <p-button 
+                  label="Send Message" 
+                  icon="pi pi-send" 
+                  [loading]="loading"
+                  [disabled]="contactForm.invalid"
+                  type="submit"
+                  class="w-full"
+                ></p-button>
+              </div>
+            </form>
+            <p-message></p-message>
+          </p-card>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
