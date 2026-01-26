@@ -15,4 +15,8 @@ export class Header {
     this.router.navigate(['/register']);
   }
 
+  onLoginClick(){
+    this.router.navigate(['/login']);
+  }
+
 }

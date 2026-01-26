@@ -8,13 +8,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Register } from './register/register';
 import { Login } from './login/login';
 import { CommonComponentsModule } from '../shared/components/components-module';
+import { ForgotPassword } from './forgot-password/forgot-password';
+import { ResetPassword } from './reset-password/reset-password';
 
 
 @NgModule({
   declarations: [
     Home,
     Register,
-    Login
+    Login,
+    ForgotPassword,
+    ResetPassword
   ],
   imports: [
     CommonComponentsModule,
