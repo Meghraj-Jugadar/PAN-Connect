@@ -4,7 +4,7 @@ import { AuthRoutingModule } from './auth-routing-module';
 import { Home } from './home/home';
 import { PrimengModule } from '../shared/primeNG/primeng-module';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Register } from './register/register';
 import { Login } from './login/login';
 import { CommonComponentsModule } from '../shared/components/components-module';
@@ -21,6 +21,7 @@ import { CommonComponentsModule } from '../shared/components/components-module';
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
+    FormsModule,
     AuthRoutingModule,
     PrimengModule,
   ]
