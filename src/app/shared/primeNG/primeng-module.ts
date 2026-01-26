@@ -9,6 +9,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { BadgeModule } from 'primeng/badge';
 import { ToolbarModule } from 'primeng/toolbar';
 import { AvatarModule } from 'primeng/avatar';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 @NgModule({
   declarations: [],
@@ -22,7 +23,8 @@ import { AvatarModule } from 'primeng/avatar';
     ChipModule, 
     BadgeModule,
     ToolbarModule,
-    AvatarModule
+    AvatarModule,
+    FloatLabelModule
   ],
   exports: [ 
     ButtonModule,
@@ -33,7 +35,8 @@ import { AvatarModule } from 'primeng/avatar';
     ChipModule, 
     BadgeModule,
     ToolbarModule,
-    AvatarModule
+    AvatarModule,
+    FloatLabelModule
   ]
 })
 export class PrimengModule { }

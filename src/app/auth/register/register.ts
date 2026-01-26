@@ -7,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './register.scss',
 })
 export class Register {
+  fName: string = '';
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
 
+  onSubmit() {
+    console.log({ 
+      fName: this.fName, 
+      email: this.email, 
+      password: this.password, 
+      confirmPassword: this.confirmPassword 
+    });
+  }
 }
