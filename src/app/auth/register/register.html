@@ -1,50 +1,83 @@
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-6">
-      <form (ngSubmit)="onSubmit()" class="p-4">
-        <div class="row">
-          <div class="col-12 col-md-6 mb-3">
-            <p-floatlabel variant="on">
-                <input pInputText id="firstName" [(ngModel)]="fName" name="fName" autocomplete="off" />
-                <label for="firstName">First Name</label>
-            </p-floatlabel>
-          </div>
-          
-          <div class="col-12 col-md-6 mb-3">
-            <p-floatlabel variant="on">
-                <input pInputText id="email" [(ngModel)]="email" name="email" type="email" autocomplete="off" />
-                <label for="email">Email</label>
-            </p-floatlabel>
-          </div>
+<div class="auth-wrapper">
+  <div class="auth-card">
+
+    <!-- LEFT PANEL -->
+    <div class="auth-left d-none d-md-flex">
+      <div class="overlay-text">
+        <p>A NEW WAY TO</p>
+        <h2>COLLABORATE</h2>
+      </div>
+      <img src="assets/register-illustration.png" alt="Register Illustration" class="auth-image" />
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="auth-right">
+      <h3>Get Started!</h3>
+
+      <form (ngSubmit)="onSubmit()">
+
+        <!-- FULL NAME -->
+        <div class="mb-3">
+          <p-floatlabel variant="on">
+            <input pInputText id="fullName" [(ngModel)]="fName" name="fName" autocomplete="off" />
+            <label for="fullName">Full Name</label>
+          </p-floatlabel>
         </div>
 
-        <div class="row">
-          <div class="col-12 col-md-6 mb-3">
-            <p-floatlabel variant="on">
-                <input pInputText id="password" [(ngModel)]="password" name="password" type="password" autocomplete="off" />
-                <label for="password">Password</label>
-            </p-floatlabel>
-          </div>
-          
-          <div class="col-12 col-md-6 mb-3">
-            <p-floatlabel variant="on">
-                <input pInputText id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" type="password" autocomplete="off" />
-                <label for="confirmPassword">Confirm Password</label>
-            </p-floatlabel>
-          </div>
+        <!-- EMAIL -->
+        <div class="mb-3">
+          <p-floatlabel variant="on">
+            <input pInputText id="email" [(ngModel)]="email" name="email" type="email" autocomplete="off" />
+            <label for="email">Email</label>
+          </p-floatlabel>
         </div>
 
-        <div class="row">
-          <div class="col-12">
-            <button 
-              pButton 
-              type="submit" 
-              class="btn btn-primary w-100">
-              Register
-            </button>
-          </div>
+        <!-- PASSWORD -->
+        <div class="mb-3">
+          <p-floatlabel variant="on" class="password-field">
+            <input pInputText id="password" [(ngModel)]="password" name="password"
+              [type]="showPassword ? 'text' : 'password'" />
+            <label for="password">Password</label>
+
+            <!-- Eye Icon -->
+            <i class="pi" [ngClass]="showPassword ? 'pi-eye-slash' : 'pi-eye'"
+              (click)="showPassword = !showPassword"></i>
+          </p-floatlabel>
+
+          <small class="password-hint">
+            Must be at least 8 characters
+          </small>
         </div>
+
+        <!-- CONFIRM PASSWORD -->
+        <div class="mb-4">
+          <p-floatlabel variant="on" class="password-field">
+            <input pInputText id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword"
+              [type]="showConfirmPassword ? 'text' : 'password'" />
+            <label for="confirmPassword">Confirm Password</label>
+
+            <!-- Eye Icon -->
+            <i class="pi" [ngClass]="showConfirmPassword ? 'pi-eye-slash' : 'pi-eye'"
+              (click)="showConfirmPassword = !showConfirmPassword"></i>
+          </p-floatlabel>
+        </div>
+
+
+
+        <!-- BUTTON -->
+        <div class="form-actions">
+          <button pButton type="submit" class="register-btn btn-primary">
+            Register
+          </button>
+        </div>
+
+        <div class="signin-text">
+          Already have an account?
+          <span>Sign in</span>
+        </div>
+
       </form>
     </div>
+
   </div>
 </div>
