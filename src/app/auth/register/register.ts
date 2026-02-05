@@ -15,6 +15,8 @@ export class Register {
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
+  showPassword: boolean = false;
+  showConfirmPassword: boolean = false;
 
   constructor(private api: Api) {}
 

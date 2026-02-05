@@ -1,49 +1,84 @@
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-6">
-      <form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="p-4">
-        <div class="row">
-          <div class="col-12 col-md-6 mb-3">
-            <p-floatlabel variant="on">
-              <input pInputText id="firstName" [(ngModel)]="fName" name="fName" autocomplete="off" />
-              <label for="firstName">First Name</label>
-            </p-floatlabel>
-          </div>
+<div class="auth-wrapper">
+  <div class="auth-card">
 
-          <div class="col-12 col-md-6 mb-3">
-            <p-floatlabel variant="on">
-              <input pInputText id="email" [(ngModel)]="email" name="email" type="email" autocomplete="off" />
-              <label for="email">Email</label>
-            </p-floatlabel>
-          </div>
+    <!-- LEFT PANEL -->
+    <div class="col-md-6 auth-left d-none d-md-flex">
+      <div class="overlay-text">
+        <p>A NEW WAY TO</p>
+        <h2>COLLABORATE</h2>
+      </div>
+      <img src="assets/register-illustration.png" alt="Register Illustration" class="auth-image" />
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="col-12 col-md-6 auth-right">
+      <span class="auth-right-header-span">
+        <p class="auth-right-header">Create your account</p>
+        <p class="auth-right-subheader">Get started with your account</p>
+      </span>
+
+      <form (ngSubmit)="onSubmit()" class="auth-form">
+
+        <!-- FULL NAME -->
+        <div class="form-input">
+          <p-floatlabel variant="on">
+            <input pInputText id="fullName" [(ngModel)]="fName" name="fName" autocomplete="off" />
+            <label for="fullName">Full Name</label>
+          </p-floatlabel>
         </div>
 
-        <div class="row">
-          <div class="col-12 col-md-6 mb-3">
-            <p-floatlabel variant="on">
-              <input pInputText id="password" [(ngModel)]="password" name="password" type="password"
-                autocomplete="off" />
-              <label for="password">Password</label>
-            </p-floatlabel>
-          </div>
-
-          <div class="col-12 col-md-6 mb-3">
-            <p-floatlabel variant="on">
-              <input pInputText id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword"
-                type="password" autocomplete="off" />
-              <label for="confirmPassword">Confirm Password</label>
-            </p-floatlabel>
-          </div>
+        <!-- EMAIL -->
+        <div class="form-input">
+          <p-floatlabel variant="on">
+            <input pInputText id="email" [(ngModel)]="email" name="email" type="email" autocomplete="off" />
+            <label for="email">Email</label>
+          </p-floatlabel>
         </div>
 
-        <div class="row">
-          <div class="col-12">
-            <button pButton type="submit" class="btn btn-primary w-100">
-              Sign Up
-            </button>
-          </div>
+        <!-- PASSWORD -->
+        <div class="form-input">
+          <p-floatlabel variant="on" class="password-field">
+            <input pInputText id="password" [(ngModel)]="password" name="password"
+              [type]="showPassword ? 'text' : 'password'" />
+            <label for="password">Password</label>
+
+            <!-- Eye Icon -->
+            <i class="pi" [ngClass]="showPassword ? 'pi-eye-slash eye-green' : 'pi-eye eye-red'"
+              (click)="showPassword = !showPassword"></i>
+          </p-floatlabel>
+
+          <small class="password-hint">
+            Must be at least 8 characters
+          </small>
         </div>
+
+        <!-- CONFIRM PASSWORD -->
+        <div class="form-input">
+          <p-floatlabel variant="on" class="password-field">
+            <input pInputText id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword"
+              [type]="showConfirmPassword ? 'text' : 'password'" />
+            <label for="confirmPassword">Confirm Password</label>
+
+            <!-- Eye Icon -->
+            <i class="pi" [ngClass]="showConfirmPassword ? 'pi-eye-slash eye-green' : 'pi-eye eye-red'"
+              (click)="showConfirmPassword = !showConfirmPassword"></i>
+          </p-floatlabel>
+        </div>
+
+        <!-- BUTTON -->
+        <div class="form-actions">
+          <button pButton type="submit" class="register-btn btn-primary">
+            Register
+          </button>
+        </div>
+
+        <div class="signin-text">
+          Already have an account?
+          <span>Sign in</span>
+        </div>
+
       </form>
     </div>
+
   </div>
 </div>

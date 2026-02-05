@@ -1,6 +1,11 @@
+@use 'assets/scss/_variables' as *;
 @import 'primeicons/primeicons.css';
-// @import '../assets/scss/_variables.scss';
 
 * {
   font-family: 'Nonito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }

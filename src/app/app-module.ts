@@ -7,7 +7,7 @@ import { AdminModule } from './admin/admin-module';
 import { UserModule } from './user/user-module';
 import { AngularMatModule } from './shared/material/angular-mat-module';
 import { providePrimeNG } from 'primeng/config';
-import Nora from '@primeuix/themes/nora';
+import Aura from '@primeuix/themes/aura';
 import { PrimengModule } from './shared/primeNG/primeng-module';
 import { MessageService } from 'primeng/api';
 import { CommonComponentsModule } from './shared/components/components-module';
@@ -30,7 +30,7 @@ import { CommonComponentsModule } from './shared/components/components-module';
     provideBrowserGlobalErrorListeners(),
     providePrimeNG({
       theme: {
-        preset: Nora
+        preset: Aura
       }
     }),
     MessageService
