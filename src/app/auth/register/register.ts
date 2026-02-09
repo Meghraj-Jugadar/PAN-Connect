@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Api } from '../../core/services/api';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,9 @@ export class Register {
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
 
-  constructor(private api: Api) {}
+  constructor(private api: Api,
+    private router: Router
+  ) {}
 
   onSubmit() {
     const userData = {
@@ -40,5 +43,9 @@ export class Register {
 
   resetForm() {
     this.registerForm.resetForm();
+  }
+
+  onSignIn() {
+    this.router.navigate(['/login']);
   }
 }

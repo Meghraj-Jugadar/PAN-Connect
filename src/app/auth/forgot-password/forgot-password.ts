@@ -46,4 +46,8 @@ export class ForgotPassword implements OnInit {
   onBackToLogin() {
     this.router.navigate(['/login']);
   }
+
+  onSignUp() {
+    this.router.navigate(['/register']);
+  }
 }

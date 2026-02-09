@@ -14,9 +14,9 @@ export class Login {
 
   email: string = '';
   password: string = '';
+  showPassword: boolean = false;
 
-  constructor(private api: Api,private router: Router
-  ) { }
+  constructor(private api: Api, private router: Router) { }
 
   onSubmit() {
     const userData = {
@@ -42,5 +42,9 @@ export class Login {
   onForgotPassword() {
     const navigationExtras = this.email ? { queryParams: { email: this.email } } : {};
     this.router.navigate(['/forgot-password'], navigationExtras);
+  }
+
+  onSignUp() {
+    this.router.navigate(['/register']);
   }
 }

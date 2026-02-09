@@ -1,0 +1,22 @@
+@use '../../../assets/scss/variables' as *;
+
+// Import the same styles from register
+@use '../register/register.scss' as *;
+
+// Add login-specific styles if needed
+.forgot-password-link {
+  text-align: right;
+  margin-top: -8px;
+  margin-bottom: 8px;
+
+  a {
+    font-size: 13px;
+    color: $color-primary;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
